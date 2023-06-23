@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_pokemon"
+    >
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/PokemonTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Pokedex" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="70dp"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:src="@drawable/pokeball"></ImageView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar pokemon"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:scaleY="1"
+        android:scaleX="1.5"
+        android:layout_marginBottom="25dp"
+        android:padding="5dp"
+        style="@style/MyButtonStyle"/>
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">#ff4c33</item>
+        <item name="android:fontFamily">@font/pokemon_font</item>
+        <item name="android:textColor">#f7ff7a</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+
+
+</resources>
