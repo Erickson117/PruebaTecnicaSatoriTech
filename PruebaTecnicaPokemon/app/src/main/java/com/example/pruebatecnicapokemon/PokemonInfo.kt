@@ -30,16 +30,19 @@ class PokemonInfo : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        getRandomPokemonData { name, imageUrl, exception ->
-            if (name != null && imageUrl != null) {
+        getRandomPokemonData { name, imageUrl, exception -> //Aqui se mandan los parametros ara la funcion los cuales buscara en el json para traer su valor
+            if (name != null && imageUrl != null) { //en caso de que si devuelva imagen y nombre se procede a lo siguiente por eso pide que no sean nulos
                 runOnUiThread {
                     // Modificar ImageView con la imagen del Pokémon
-                    Glide.with(this)
-                        .load(imageUrl)
-                        .into(imageView)
+                    Glide.with(this) //usando Glide se cargan imagenes directamente de una URL
+                        .load(imageUrl) //esta url se genera en la función
+                        .into(imageView) //aca se modifica la image view
 
                     // Modificar TextView con el nombre del Pokémon
                     textView.text = name
+                    //Ajuste del tamaño de la imagen obtenida de la api
+                    imageView.layoutParams.height = 1200
+                    imageView.layoutParams.width = 1200
                 }
             } else {
                 exception?.printStackTrace()
@@ -83,24 +86,6 @@ class PokemonInfo : AppCompatActivity() {
     data class Sprites(
         val front_default: String
     )
-    /*
-    fun getRandomPokemonJson(callback: (String?, Exception?) -> Unit) {
-        val client = OkHttpClient()
-        val url = "https://pokeapi.co/api/v2/pokemon/${(1..898).random()}"
-        val request = Request.Builder()
-            .url(url)
-            .build()
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                callback(null, e)
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                val responseBody = response.body?.string()
-                callback(responseBody, null)
-            }
-        })
-    }*/
 
 }
